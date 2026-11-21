@@ -42,3 +42,9 @@ Valida plano, saldo, reserva, falhas, intervalo efetivo, datas especiais, atraso
 ## Validação real em 21/11/2026
 
 Primeira coleta e publicação concluídas: 5 buscas, 7 anúncios preservados, 245 créditos restantes e 185 utilizáveis dentro do teto. Renovação em 21/12/2026. LG 24MS500-B sem correspondência exata nesta coleta. Anúncios com frequência divergente ou lojas fora das fontes prioritárias ficam sinalizados para revisão e não entram no preço principal nem na referência habitual. Nenhum registro foi apagado. O coletor exige preços explicitamente em R$ nas próximas buscas. A referência é inicial até haver pelo menos três dias anteriores à BF; descontos reais só são calculados com essa base mínima. Quando a API retorna apenas product_link do Google Shopping, a interface o identifica e não o apresenta como link direto ao lojista.
+
+## Fotos e acesso à oferta
+
+Cards exibem fotos oficiais do catálogo, com miniatura do anúncio como alternativa para produtos futuros. A coleta guarda `thumbnail` HTTPS sem consultas adicionais. O botão junto ao preço abre a menor oferta sem alertas; na ausência dela mostra o menor anúncio para revisão com aviso explícito. Links do Google Shopping são identificados. Falhas de imagem têm texto alternativo. Cadastro de imagem por URL é opcional.
+
+Preços são coletados e preservados pelo GitHub Actions mesmo com o site fechado. O agendamento diário verifica um intervalo mínimo de 48 horas por produto; portanto a execução efetiva pode ocorrer depois de 48 horas. Registro manual é opcional, e produtos locais só entram na coleta após salvar o catálogo no GitHub.

@@ -146,6 +146,9 @@ def collect(data, products, key, now):
                 'collectedAt':now.isoformat(),'source':'SerpApi Google Shopping','cartConfirmed':False}
             record['reviewReason'] = review_reason(p, title, record['store'])
             record['currency'] = 'BRL'
+            thumbnail = item.get('thumbnail')
+            if isinstance(thumbnail, str) and urllib.parse.urlsplit(thumbnail).scheme == 'https':
+                record['image'] = thumbnail
             fingerprint = '|'.join(str(record[k]) for k in ('productId','date','price','store','url'))
             record['id'] = 'auto-' + hashlib.sha256(fingerprint.encode()).hexdigest()[:24]
             if not any(r.get('id') == record['id'] for r in data['prices']):

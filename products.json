@@ -9,7 +9,8 @@
     "target": 399,
     "brand": "LG",
     "url": "https://www.lg.com/br/monitores/fhd-qhd/24ms500-b/",
-    "refresh_hz": 100
+    "refresh_hz": 100,
+    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/monitores/24ms500-b_awzm_essp_br_c/gallery-new/DZ-01.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg?w=800"
   },
   {
     "id": "seed1",
@@ -27,7 +28,8 @@
       "S30GD"
     ],
     "size_required": true,
-    "refresh_hz": 100
+    "refresh_hz": 100,
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/br/ls24d300galmzd/gallery/br-essential-s3-s30gd-ls24d300galmzd-545264636?$624_468_PNG$"
   },
   {
     "id": "seed2",
@@ -39,7 +41,8 @@
     "target": 499,
     "brand": "LG",
     "url": "https://www.lg.com/br/monitores/monitores-ultragear/24g411b-b/",
-    "refresh_hz": 144
+    "refresh_hz": 144,
+    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/produtos/it/24g411b-b/galeria/1-180x180-24g411b-b.jpg"
   },
   {
     "id": "seed3",
@@ -54,7 +57,8 @@
     "match_models": [
       "24G4/P"
     ],
-    "refresh_hz": 180
+    "refresh_hz": 180,
+    "image": "https://aoc.portaltpv.com.br/uploads/images/2024/12/562-24g4p-1733312630.jpg"
   },
   {
     "id": "seed4",
@@ -66,6 +70,7 @@
     "target": 899,
     "brand": "AOC",
     "url": "https://aoc.portaltpv.com.br/uploads/specifications/2025/11/q27g4f.pdf",
-    "refresh_hz": 180
+    "refresh_hz": 180,
+    "image": "https://aoc.portaltpv.com.br/uploads/images/2025/11/586-cs25g-1762536182.jpg"
   }
 ]
