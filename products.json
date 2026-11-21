@@ -1,7 +1,66 @@
 [
-  {"id":"seed0", "name":"LG 24MS500-B", "model":"24MS500-B", "query":"LG 24MS500-B monitor IPS 100Hz"},
-  {"id":"seed1", "name":"Samsung Essential S3 24 S30GD", "model":"S30GD", "query":"Samsung S3 S30GD monitor IPS 24 100Hz"},
-  {"id":"seed2", "name":"LG UltraGear 24G411B-B", "model":"24G411B-B", "query":"LG 24G411B-B IPS 144Hz monitor"},
-  {"id":"seed3", "name":"AOC 24G4", "model":"24G4", "query":"AOC 24G4 IPS 180Hz monitor"},
-  {"id":"seed4", "name":"AOC Q27G4F", "model":"Q27G4F", "query":"AOC Q27G4F IPS QHD monitor"}
+  {
+    "id": "seed0",
+    "name": "LG 24MS500-B",
+    "model": "24MS500-B",
+    "query": "LG 24MS500-B monitor IPS 100Hz",
+    "category": "Monitor",
+    "specs": "24″ · IPS · Full HD · 100 Hz",
+    "target": 399,
+    "brand": "LG",
+    "url": "https://www.lg.com/br/monitores/fhd-qhd/24ms500-b/"
+  },
+  {
+    "id": "seed1",
+    "name": "Samsung Essential S3 24 S30GD",
+    "model": "S30GD",
+    "query": "Samsung S3 S30GD monitor IPS 24 100Hz",
+    "category": "Monitor",
+    "specs": "24″ · IPS · Full HD · 100 Hz",
+    "target": 399,
+    "brand": "Samsung",
+    "url": "https://www.samsung.com/br/monitors/full-hd-1080p/essential-monitor-s3-s30gd-24-inch-fhd-ips-100hz-ls24d300galmzd/",
+    "match_models": [
+      "LS24D300GALMZD",
+      "S24D300GA",
+      "S30GD"
+    ],
+    "size_required": true
+  },
+  {
+    "id": "seed2",
+    "name": "LG UltraGear 24G411B-B",
+    "model": "24G411B-B",
+    "query": "LG 24G411B-B IPS 144Hz monitor",
+    "category": "Monitor",
+    "specs": "24″ · IPS · Full HD · 144 Hz",
+    "target": 499,
+    "brand": "LG",
+    "url": "https://www.lg.com/br/monitores/monitores-ultragear/24g411b-b/"
+  },
+  {
+    "id": "seed3",
+    "name": "AOC 24G4/P",
+    "model": "24G4/P",
+    "query": "AOC 24G4/P monitor 180Hz IPS",
+    "category": "Monitor",
+    "specs": "23,8″ · IPS · Full HD · 180 Hz",
+    "target": 599,
+    "brand": "AOC",
+    "url": "https://aoc.portaltpv.com.br/uploads/specifications/2024/12/24g4p.pdf",
+    "match_models": [
+      "24G4/P"
+    ]
+  },
+  {
+    "id": "seed4",
+    "name": "AOC Q27G4F",
+    "model": "Q27G4F",
+    "query": "AOC Q27G4F IPS QHD monitor",
+    "category": "Monitor",
+    "specs": "27″ · IPS plano · Quad HD · 180 Hz",
+    "target": 899,
+    "brand": "AOC",
+    "url": "https://aoc.portaltpv.com.br/uploads/specifications/2025/11/q27g4f.pdf"
+  }
 ]
