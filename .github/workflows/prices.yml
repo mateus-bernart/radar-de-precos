@@ -45,7 +45,7 @@ jobs:
       - name: Preparar somente arquivos públicos
         run: |
           mkdir -p public/data
-          cp index.html products.json public/
+          cp index.html products.json store-policy.js public/
           cp data/prices.json public/data/
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -48,3 +48,7 @@ Primeira coleta e publicação concluídas: 5 buscas, 7 anúncios preservados, 2
 Cards exibem fotos oficiais do catálogo, com miniatura do anúncio como alternativa para produtos futuros. A coleta guarda `thumbnail` HTTPS sem consultas adicionais. O botão junto ao preço abre a menor oferta sem alertas; na ausência dela mostra o menor anúncio para revisão com aviso explícito. Links do Google Shopping são identificados. Falhas de imagem têm texto alternativo. Cadastro de imagem por URL é opcional.
 
 Preços são coletados e preservados pelo GitHub Actions mesmo com o site fechado. O agendamento diário verifica um intervalo mínimo de 48 horas por produto; portanto a execução efetiva pode ocorrer depois de 48 horas. Registro manual é opcional, e produtos locais só entram na coleta após salvar o catálogo no GitHub.
+
+## Filtro obrigatório de lojas
+
+Somente links HTTPS diretos nos domínios mercadolivre.com.br, amazon.com.br, shopee.com.br, kabum.com.br e terabyteshop.com.br (e seus subdomínios). Nomes de lojas na resposta não bastam. URLs com credenciais, portas não padrão, domínios parecidos e links genéricos do Google são recusados. O coletor deixa de gravar ofertas que não passam; a interface aplica o mesmo filtro retroativamente a preços públicos e locais, em cards, tabelas, gráficos, estatísticas e CSV. Backup JSON preserva todos os registros para evitar perda de histórico. Se a API não entregar o link direto, nenhuma oferta é exibida; nunca substituímos por uma busca genérica. Não foi feita nova consulta paga/contabilizada para alterar o filtro.

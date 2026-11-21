@@ -54,6 +54,27 @@ def quota(a):
                 190-a['this_month_usage'], a['plan_searches_left']-60,
                 a['total_searches_left']-60))}
 
+STORE_DOMAINS = ('mercadolivre.com.br', 'amazon.com.br', 'shopee.com.br', 'kabum.com.br', 'terabyteshop.com.br')
+
+def allowed_offer_url(value):
+    if not isinstance(value, str):
+        return ''
+    try:
+        url = urllib.parse.urlsplit(value)
+        host = (url.hostname or '').lower()
+        if url.scheme != 'https' or url.username or url.password or url.port not in (None,443):
+            return ''
+        if any(host == domain or host.endswith('.'+domain) for domain in STORE_DOMAINS):
+            return value
+    except ValueError:
+        pass
+    return ''
+
+def offer_url(item):
+    # Só aceitar link direto; product_link do Google não confirma o destino lojista.
+    return next((url for key in ('link','product_link')
+                 if (url := allowed_offer_url(item.get(key)))), '')
+
 def normalize(s):
     return re.sub(r'[^A-Z0-9]', '', str(s).upper())
 
@@ -137,9 +158,9 @@ def collect(data, products, key, now):
             # Não misturar usados, recondicionados ou kits com preços de novos.
             if re.search(r'\b(usado|seminovo|recondicionado|refurbished|kit)\b', title, re.I):
                 continue
-            url = item.get('link') or item.get('product_link') or ''
-            if urllib.parse.urlsplit(url).scheme not in ('http','https'):
-                url = ''
+            url = offer_url(item)
+            if not url:
+                continue
             record = {'productId':p['id'],'date':now.astimezone(ZoneInfo('America/Sao_Paulo')).date().isoformat(),
                 'price':price,'shipping':None,'shippingKnown':False,'store':item.get('source') or 'Loja não identificada',
                 'condition':'Novo','kind':'Coleta automática','url':url,'title':title,

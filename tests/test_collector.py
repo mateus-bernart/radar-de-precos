@@ -58,14 +58,14 @@ class Safety(unittest.TestCase):
    self.assertEqual(app.collect({},[PRODUCT,{**PRODUCT,'id':'other'}],'secret',NOW),1)
   self.assertEqual(calls.count('search.json'),1)
  def test_records_and_deduplication(self):
-  item={'title':'AOC Q27G4F IPS','price':'R$ 899,00','extracted_price':899,'source':'Loja','link':'https://example.com/monitor'}
+  item={'title':'AOC Q27G4F IPS','price':'R$ 899,00','extracted_price':899,'source':'Amazon.com.br','link':'https://www.amazon.com.br/dp/TEST'}
   response={'search_metadata':{'status':'Success'},'shopping_results':[item,item,{**item,'title':'CQ27G4F'},{**item,'extracted_price':float('nan')}]}
   with patch.object(app,'get_json',side_effect=[ACCOUNT,response,ACCOUNT]):
    data={'prices':[{'id':'legacy','price':100}]};app.collect(data,[PRODUCT],'secret',NOW)
   self.assertEqual(len(data['prices']),2)
   row=data['prices'][1];self.assertIsNone(row['shipping']);self.assertFalse(row['shippingKnown']);self.assertEqual(row['date'],'2026-11-21')
  def test_partial_history_survives_second_account_failure(self):
-  response={'search_metadata':{'status':'Success'},'shopping_results':[{'title':'Q27G4F','price':'R$ 900,00','extracted_price':900}]}
+  response={'search_metadata':{'status':'Success'},'shopping_results':[{'title':'Q27G4F','price':'R$ 900,00','extracted_price':900,'link':'https://www.kabum.com.br/produto/123'}]}
   data={}
   with patch.object(app,'get_json',side_effect=[ACCOUNT,response,app.SafeStop('Falha')]):
    with self.assertRaises(app.SafeStop):app.collect(data,[PRODUCT,{**PRODUCT,'id':'other'}],'secret',NOW)
@@ -74,6 +74,19 @@ class Safety(unittest.TestCase):
   self.assertTrue(app.review_reason({'refresh_hz':144},'Monitor 100Hz','LG Electronics'))
   self.assertTrue(app.review_reason({},'Monitor','PC House BD'))
   self.assertFalse(app.review_reason({'refresh_hz':144},'Monitor 144Hz','LG Electronics do Brasil'))
+ def test_allowed_offer_urls(self):
+  for domain in app.STORE_DOMAINS:
+   for url in (f'https://{domain}/produto/123',f'https://www.{domain}/produto/123'):
+    self.assertEqual(app.allowed_offer_url(url),url)
+  for url in ('https://amazon.com.br.falso.com/x','https://falsoamazon.com.br/x','https://www.google.com/search?q=amazon.com.br','https://pichau.com.br/produto/123','http://www.kabum.com.br/x','https://amazon.com/x','javascript:alert(1)','https://amazon.com.br@evil.com/x','https://evil.com@amazon.com.br/x','https://kabum.com.br:444/x',None):
+   with self.subTest(url=url):self.assertFalse(app.allowed_offer_url(url))
+ def test_disallowed_stores_not_collected(self):
+  item={'title':'Q27G4F','price':'R$ 900,00','extracted_price':900,'source':'Amazon.com.br','link':'https://falso.com/amazon'}
+  response={'search_metadata':{'status':'Success'},'shopping_results':[item,{**item,'link':'https://google.com/search?q=Amazon'},{**item,'link':'https://www.amazon.com.br/dp/TEST'}]}
+  with patch.object(app,'get_json',side_effect=[ACCOUNT,response,ACCOUNT]):
+   data={};app.collect(data,[PRODUCT],'secret',NOW)
+  self.assertEqual(len(data['prices']),1)
+  self.assertEqual(data['prices'][0]['url'],'https://www.amazon.com.br/dp/TEST')
  def test_catalog_limit(self):
   with self.assertRaises(app.SafeStop):app.collect({},[{**PRODUCT,'id':str(i)} for i in range(12)],'secret',NOW)
 if __name__=='__main__':unittest.main()
