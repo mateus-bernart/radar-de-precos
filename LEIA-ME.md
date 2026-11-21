@@ -38,3 +38,7 @@ A janela BF é 27 a 30/11/2026; referência anterior usa somente datas anteriore
 `python3 -m unittest discover -s tests -v`
 
 Valida plano, saldo, reserva, falhas, intervalo efetivo, datas especiais, atraso da Account API, correspondência de modelos, limite de produtos e preservação dos registros parciais.
+
+## Validação real em 21/11/2026
+
+Primeira coleta e publicação concluídas: 5 buscas, 7 anúncios preservados, 245 créditos restantes e 185 utilizáveis dentro do teto. Renovação em 21/12/2026. LG 24MS500-B sem correspondência exata nesta coleta. Anúncios com frequência divergente ou lojas fora das fontes prioritárias ficam sinalizados para revisão e não entram no preço principal nem na referência habitual. Nenhum registro foi apagado. O coletor exige preços explicitamente em R$ nas próximas buscas. A referência é inicial até haver pelo menos três dias anteriores à BF; descontos reais só são calculados com essa base mínima. Quando a API retorna apenas product_link do Google Shopping, a interface o identifica e não o apresenta como link direto ao lojista.

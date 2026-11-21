@@ -70,6 +70,15 @@ def matches(p, title):
             return True
     return False
 
+def review_reason(p, title, store):
+    reasons = []
+    hz = re.findall(r"(\d+)\s*HZ", title.upper())
+    if p.get('refresh_hz') and hz and str(p['refresh_hz']) not in hz:
+        reasons.append('Frequência do anúncio diverge da ficha oficial')
+    if not re.search(r'kabum|pichau|terabyte|amazon|mercado livre|magazine luiza|magalu|casas bahia|lg electronics|samsung|shopee|fast shop', store, re.I):
+        reasons.append('Loja fora das fontes prioritárias; confirmar origem e condições')
+    return '; '.join(reasons)
+
 def due(p, data, now):
     previous = data.get('product_checks', {}).get(p['id'])
     if not previous:
@@ -123,6 +132,8 @@ def collect(data, products, key, now):
             if type(price) not in (int,float) or not math.isfinite(price) or price<=0:
                 continue
             title = item.get('title','')
+            if not re.match(r'^R\$\s*', str(item.get('price',''))):
+                continue  # Não interpretar moeda estrangeira como reais.
             # Não misturar usados, recondicionados ou kits com preços de novos.
             if re.search(r'\b(usado|seminovo|recondicionado|refurbished|kit)\b', title, re.I):
                 continue
@@ -133,6 +144,8 @@ def collect(data, products, key, now):
                 'price':price,'shipping':None,'shippingKnown':False,'store':item.get('source') or 'Loja não identificada',
                 'condition':'Novo','kind':'Coleta automática','url':url,'title':title,
                 'collectedAt':now.isoformat(),'source':'SerpApi Google Shopping','cartConfirmed':False}
+            record['reviewReason'] = review_reason(p, title, record['store'])
+            record['currency'] = 'BRL'
             fingerprint = '|'.join(str(record[k]) for k in ('productId','date','price','store','url'))
             record['id'] = 'auto-' + hashlib.sha256(fingerprint.encode()).hexdigest()[:24]
             if not any(r.get('id') == record['id'] for r in data['prices']):

@@ -15,7 +15,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-8be9f4c61ecc2489aa3cd14b"
+      "id": "auto-8be9f4c61ecc2489aa3cd14b",
+      "reviewReason": ""
     },
     {
       "productId": "seed2",
@@ -31,7 +32,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-41ea0edbec58d52d56a19664"
+      "id": "auto-41ea0edbec58d52d56a19664",
+      "reviewReason": ""
     },
     {
       "productId": "seed2",
@@ -47,7 +49,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-d58deaf393b1a1ec5e398cda"
+      "id": "auto-d58deaf393b1a1ec5e398cda",
+      "reviewReason": "Frequência do anúncio diverge da ficha oficial; Loja fora das fontes prioritárias; confirmar origem e condições"
     },
     {
       "productId": "seed3",
@@ -63,7 +66,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-86baa336172550aa4460ebf3"
+      "id": "auto-86baa336172550aa4460ebf3",
+      "reviewReason": "Loja fora das fontes prioritárias; confirmar origem e condições"
     },
     {
       "productId": "seed4",
@@ -79,7 +83,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-9316ef5108a97bb37c664ca9"
+      "id": "auto-9316ef5108a97bb37c664ca9",
+      "reviewReason": ""
     },
     {
       "productId": "seed4",
@@ -95,7 +100,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-ab7d0b3a1f45c478c817ba0c"
+      "id": "auto-ab7d0b3a1f45c478c817ba0c",
+      "reviewReason": "Loja fora das fontes prioritárias; confirmar origem e condições"
     },
     {
       "productId": "seed4",
@@ -111,7 +117,8 @@
       "collectedAt": "2026-11-21T22:48:50.309133+00:00",
       "source": "SerpApi Google Shopping",
       "cartConfirmed": false,
-      "id": "auto-94dd7c29cc018c69e7726a1b"
+      "id": "auto-94dd7c29cc018c69e7726a1b",
+      "reviewReason": ""
     }
   ],
   "product_checks": {

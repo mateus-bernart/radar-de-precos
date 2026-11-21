@@ -58,18 +58,22 @@ class Safety(unittest.TestCase):
    self.assertEqual(app.collect({},[PRODUCT,{**PRODUCT,'id':'other'}],'secret',NOW),1)
   self.assertEqual(calls.count('search.json'),1)
  def test_records_and_deduplication(self):
-  item={'title':'AOC Q27G4F IPS','extracted_price':899,'source':'Loja','link':'https://example.com/monitor'}
+  item={'title':'AOC Q27G4F IPS','price':'R$ 899,00','extracted_price':899,'source':'Loja','link':'https://example.com/monitor'}
   response={'search_metadata':{'status':'Success'},'shopping_results':[item,item,{**item,'title':'CQ27G4F'},{**item,'extracted_price':float('nan')}]}
   with patch.object(app,'get_json',side_effect=[ACCOUNT,response,ACCOUNT]):
    data={'prices':[{'id':'legacy','price':100}]};app.collect(data,[PRODUCT],'secret',NOW)
   self.assertEqual(len(data['prices']),2)
   row=data['prices'][1];self.assertIsNone(row['shipping']);self.assertFalse(row['shippingKnown']);self.assertEqual(row['date'],'2026-11-21')
  def test_partial_history_survives_second_account_failure(self):
-  response={'search_metadata':{'status':'Success'},'shopping_results':[{'title':'Q27G4F','extracted_price':900}]}
+  response={'search_metadata':{'status':'Success'},'shopping_results':[{'title':'Q27G4F','price':'R$ 900,00','extracted_price':900}]}
   data={}
   with patch.object(app,'get_json',side_effect=[ACCOUNT,response,app.SafeStop('Falha')]):
    with self.assertRaises(app.SafeStop):app.collect(data,[PRODUCT,{**PRODUCT,'id':'other'}],'secret',NOW)
   self.assertEqual(len(data['prices']),1)
+ def test_review_flags(self):
+  self.assertTrue(app.review_reason({'refresh_hz':144},'Monitor 100Hz','LG Electronics'))
+  self.assertTrue(app.review_reason({},'Monitor','PC House BD'))
+  self.assertFalse(app.review_reason({'refresh_hz':144},'Monitor 144Hz','LG Electronics do Brasil'))
  def test_catalog_limit(self):
   with self.assertRaises(app.SafeStop):app.collect({},[{**PRODUCT,'id':str(i)} for i in range(12)],'secret',NOW)
 if __name__=='__main__':unittest.main()
