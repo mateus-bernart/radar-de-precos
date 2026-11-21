@@ -17,7 +17,10 @@
         "url": "https://www.amazon.com.br/Monitor-Gamer-LG-24MS500-100Hz/dp/B0DF2WSGF6",
         "checkedAt": "2026-11-21T23:11:34.533990+00:00"
       }
-    ]
+    ],
+    "sizeInches": 24,
+    "panel": "IPS",
+    "resolution": "1920x1080"
   },
   {
     "id": "seed1",
@@ -43,7 +46,10 @@
         "url": "https://www.amazon.com.br/Monitor-Gamer-Samsung-HDMI-Preto/dp/B0F1C49115",
         "checkedAt": "2026-11-21T23:11:34.533990+00:00"
       }
-    ]
+    ],
+    "sizeInches": 24,
+    "panel": "IPS",
+    "resolution": "1920x1080"
   },
   {
     "id": "seed2",
@@ -63,7 +69,10 @@
         "url": "https://www.amazon.com.br/LG-UltraGear-Monitor-1920x1080-FreeSync/dp/B0HB6GK6CK",
         "checkedAt": "2026-11-21T23:11:34.533990+00:00"
       }
-    ]
+    ],
+    "sizeInches": 24,
+    "panel": "IPS",
+    "resolution": "1920x1080"
   },
   {
     "id": "seed3",
@@ -91,7 +100,10 @@
         "url": "https://www.kabum.com.br/produto/704039/monitor-gamer-aoc-24-180hz-0-5ms-ips-ajuste-de-altura-24g4-p",
         "checkedAt": "2026-11-21T23:11:34.533990+00:00"
       }
-    ]
+    ],
+    "sizeInches": 23.8,
+    "panel": "IPS",
+    "resolution": "1920x1080"
   },
   {
     "id": "seed4",
@@ -111,6 +123,9 @@
         "url": "https://www.amazon.com.br/Monitor-Gamer-AOC-Ajust%C3%A1vel-Q27G4F/dp/B0FGDK8DJM",
         "checkedAt": "2026-11-21T23:11:34.533990+00:00"
       }
-    ]
+    ],
+    "sizeInches": 27,
+    "panel": "IPS",
+    "resolution": "2560x1440"
   }
 ]

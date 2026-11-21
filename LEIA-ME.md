@@ -56,3 +56,9 @@ Somente links HTTPS diretos nos domínios mercadolivre.com.br, amazon.com.br, sh
 ## Links diretos verificados
 
 Em 21/11/2026 foram verificadas páginas de produto e ofertas no navegador, sem consumir a SerpApi. Esses registros têm fonte "Verificação direta no site da loja", data/hora e condições de pagamento/vendedor; não são apresentados como preço confirmado no carrinho nem menor preço absoluto de todo o mercado. Cupons exclusivos não foram descontados. O frete continua desconhecido por depender do CEP. As páginas exatas ficam em `referenceOffers` no catálogo: quando não houver preço confirmado, o card oferece "Consultar produto na loja", sem inventar valor ou usar busca genérica. A coleta automática continua independente; estas verificações pontuais não significam que todos os links estáticos terão preço atualizado automaticamente.
+
+## Análise de compra pessoal
+
+O destaque é calculado gratuitamente no navegador por `purchase-analysis.js`: 24/23,8 polegadas IPS FHD com 120 Hz ou mais como opção econômica, ou 27 polegadas IPS QHD com 120 Hz ou mais. Teto absoluto de R$ 1.000; frete desconhecido exige conferência, nunca é assumido grátis. A opção QHD só recebe prioridade sobre FHD ao atingir a meta ou ficar 10% abaixo de uma mediana anterior suficiente. Monitores de 100 Hz ficam fora do perfil.
+
+Cada produto apresenta status e motivo. Não há previsão de preço futuro nem histórico inventado de Black Fridays anteriores. A comparação histórica usa pelo menos três dias anteriores à oferta atual, a mesma condição de frete, produtos novos, fontes permitidas e valores sem cupons/alertas. Preços atípicos e registros com mais de 96 horas não recebem destaque. O status de ponto ideal exige também meta atingida e frete confirmado. A indicação de custo-benefício compara somente os produtos cadastrados. Especificações estruturadas podem ser informadas ao cadastrar ou editar.
