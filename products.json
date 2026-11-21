@@ -1,0 +1,7 @@
+[
+  {"id":"seed0", "name":"LG 24MS500-B", "model":"24MS500-B", "query":"LG 24MS500-B monitor IPS 100Hz"},
+  {"id":"seed1", "name":"Samsung Essential S3 24 S30GD", "model":"S30GD", "query":"Samsung S3 S30GD monitor IPS 24 100Hz"},
+  {"id":"seed2", "name":"LG UltraGear 24G411B-B", "model":"24G411B-B", "query":"LG 24G411B-B IPS 144Hz monitor"},
+  {"id":"seed3", "name":"AOC 24G4", "model":"24G4", "query":"AOC 24G4 IPS 180Hz monitor"},
+  {"id":"seed4", "name":"AOC Q27G4F", "model":"Q27G4F", "query":"AOC Q27G4F IPS QHD monitor"}
+]
