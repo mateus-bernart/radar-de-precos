@@ -10,7 +10,14 @@
     "brand": "LG",
     "url": "https://www.lg.com/br/monitores/fhd-qhd/24ms500-b/",
     "refresh_hz": 100,
-    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/monitores/24ms500-b_awzm_essp_br_c/gallery-new/DZ-01.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg?w=800"
+    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/monitores/24ms500-b_awzm_essp_br_c/gallery-new/DZ-01.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg?w=800",
+    "referenceOffers": [
+      {
+        "store": "Amazon Brasil",
+        "url": "https://www.amazon.com.br/Monitor-Gamer-LG-24MS500-100Hz/dp/B0DF2WSGF6",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      }
+    ]
   },
   {
     "id": "seed1",
@@ -29,7 +36,14 @@
     ],
     "size_required": true,
     "refresh_hz": 100,
-    "image": "https://images.samsung.com/is/image/samsung/p6pim/br/ls24d300galmzd/gallery/br-essential-s3-s30gd-ls24d300galmzd-545264636?$624_468_PNG$"
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/br/ls24d300galmzd/gallery/br-essential-s3-s30gd-ls24d300galmzd-545264636?$624_468_PNG$",
+    "referenceOffers": [
+      {
+        "store": "Amazon Brasil",
+        "url": "https://www.amazon.com.br/Monitor-Gamer-Samsung-HDMI-Preto/dp/B0F1C49115",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      }
+    ]
   },
   {
     "id": "seed2",
@@ -42,7 +56,14 @@
     "brand": "LG",
     "url": "https://www.lg.com/br/monitores/monitores-ultragear/24g411b-b/",
     "refresh_hz": 144,
-    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/produtos/it/24g411b-b/galeria/1-180x180-24g411b-b.jpg"
+    "image": "https://www.lg.com/content/dam/channel/wcms/br/images/produtos/it/24g411b-b/galeria/1-180x180-24g411b-b.jpg",
+    "referenceOffers": [
+      {
+        "store": "Amazon Brasil",
+        "url": "https://www.amazon.com.br/LG-UltraGear-Monitor-1920x1080-FreeSync/dp/B0HB6GK6CK",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      }
+    ]
   },
   {
     "id": "seed3",
@@ -58,7 +79,19 @@
       "24G4/P"
     ],
     "refresh_hz": 180,
-    "image": "https://aoc.portaltpv.com.br/uploads/images/2024/12/562-24g4p-1733312630.jpg"
+    "image": "https://aoc.portaltpv.com.br/uploads/images/2024/12/562-24g4p-1733312630.jpg",
+    "referenceOffers": [
+      {
+        "store": "Amazon Brasil",
+        "url": "https://www.amazon.com.br/Monitor-AOC-Ajuste-Altura-24G4/dp/B0DLPB4CH6",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      },
+      {
+        "store": "KaBuM!",
+        "url": "https://www.kabum.com.br/produto/704039/monitor-gamer-aoc-24-180hz-0-5ms-ips-ajuste-de-altura-24g4-p",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      }
+    ]
   },
   {
     "id": "seed4",
@@ -71,6 +104,13 @@
     "brand": "AOC",
     "url": "https://aoc.portaltpv.com.br/uploads/specifications/2025/11/q27g4f.pdf",
     "refresh_hz": 180,
-    "image": "https://aoc.portaltpv.com.br/uploads/images/2025/11/586-cs25g-1762536182.jpg"
+    "image": "https://aoc.portaltpv.com.br/uploads/images/2025/11/586-cs25g-1762536182.jpg",
+    "referenceOffers": [
+      {
+        "store": "Amazon Brasil",
+        "url": "https://www.amazon.com.br/Monitor-Gamer-AOC-Ajust%C3%A1vel-Q27G4F/dp/B0FGDK8DJM",
+        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+      }
+    ]
   }
 ]
