@@ -25,3 +25,12 @@ test('histórico antigo não vira oferta atual',()=>assert.equal(rank([fhd],[row
 test('todas fora do orçamento não produz destaque',()=>assert.equal(rank([fhd,qhd],[row('fhd',1100),row('qhd',1200)],now,allowedOffer).best,null));
 test('FHD caro perde custo-benefício',()=>{const second={...fhd,id:'second',name:'FHD 180 Hz',refresh_hz:180};const r=rank([fhd,second],[row('fhd',500),row('second',700)],now,allowedOffer);assert.equal(r.best.p.id,'fhd');assert.equal(r.entries[1].a.code,'costly-alternative')});
 console.log('17 cenários de análise passaram.');
+const {normalizeProfile,DEFAULT_PROFILE}=require('../purchase-analysis');
+test('perfil personalizado aceita 100 Hz',()=>assert(evaluate({...fhd,refresh_hz:100},[row('fhd',400)],now,allowedOffer,{minHz:100}).fit));
+test('perfil apenas 27 QHD recusa 24 FHD',()=>{const settings={primarySize:27,primaryResolution:'2560x1440',alternativeEnabled:false,budget:1100};assert.equal(rank([fhd,qhd],[row('fhd',500),row('qhd',1039)],now,allowedOffer,settings).best.p.id,'qhd');assert.equal(evaluate(fhd,[],now,allowedOffer,settings).fit,false)});
+test('orçamento personalizado bloqueia compra',()=>assert.equal(evaluate(fhd,[row('fhd',599)],now,allowedOffer,{budget:550}).code,'over-budget'));
+test('prioridade alternativa respeita orçamento',()=>assert.equal(rank([fhd,qhd],[row('fhd',500),row('qhd',999)],now,allowedOffer,{priority:'alternative'}).best.p.id,'qhd'));
+test('painel e resolução livres',()=>assert(evaluate({...fhd,panel:'VA',resolution:'3840x2160'},[],now,allowedOffer,{panel:'any',primaryResolution:'any'}).fit));
+test('perfil inválido é rejeitado',()=>{for(const settings of [{budget:0},{budget:'abc'},{minHz:-1},{primarySize:Infinity},{panel:'fake'},{primaryResolution:'fake'},{priority:'fake'}])assert.throws(()=>normalizeProfile(settings))});
+test('normalização não altera perfil original',()=>{const settings=normalizeProfile({budget:500});assert.equal(settings.budget,500);assert.equal(DEFAULT_PROFILE.budget,1000)});
+console.log('24 cenários de análise e configuração passaram.');
