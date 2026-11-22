@@ -252,6 +252,25 @@
       "currency": "BRL",
       "reviewReason": "",
       "notes": "Oferta principal vendida por Amazon.com.br. Cupons condicionais não incluídos."
+    },
+    {
+      "id": "verified-8880af0d01e5919aea24edc6",
+      "productId": "samsung-s32gf-24-120hz",
+      "date": "2026-11-21",
+      "price": 484.5,
+      "shipping": null,
+      "shippingKnown": false,
+      "store": "Amazon Brasil — TNTinfoLoja",
+      "condition": "Novo",
+      "kind": "Verificação na loja",
+      "url": "https://www.amazon.com.br/dp/B0FBRZ1ZPB",
+      "title": "Samsung Essential S3 S32GF 24″",
+      "collectedAt": "2026-11-22T00:06:30.634255+00:00",
+      "source": "Verificação direta no site da loja",
+      "cartConfirmed": false,
+      "currency": "BRL",
+      "reviewReason": "",
+      "notes": "À vista no Pix ou NuPay (5% de desconto). Parcelado: R$ 510 em até 10 vezes. Vendido por TNTinfoLoja e enviado pela Amazon. Frete depende do CEP; cupons de primeira compra/Prime não incluídos."
     }
   ],
   "product_checks": {
@@ -277,5 +296,39 @@
     "conservative": true
   },
   "collection_status": "Coleta concluída; preços anunciados, frete não confirmado.",
-  "direct_offers_verified_at": "2026-11-21T23:11:34.533990+00:00"
+  "direct_offers_verified_at": "2026-11-22T00:06:30.634255+00:00",
+  "archived_products": [
+    {
+      "id": "seed1",
+      "name": "Samsung Essential S3 24 S30GD",
+      "model": "S30GD",
+      "query": "Samsung S3 S30GD monitor IPS 24 100Hz",
+      "category": "Monitor",
+      "specs": "24″ · IPS · Full HD · 100 Hz",
+      "target": 399,
+      "brand": "Samsung",
+      "url": "https://www.samsung.com/br/monitors/full-hd-1080p/essential-monitor-s3-s30gd-24-inch-fhd-ips-100hz-ls24d300galmzd/",
+      "match_models": [
+        "LS24D300GALMZD",
+        "S24D300GA",
+        "S30GD"
+      ],
+      "size_required": true,
+      "refresh_hz": 100,
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/br/ls24d300galmzd/gallery/br-essential-s3-s30gd-ls24d300galmzd-545264636?$624_468_PNG$",
+      "referenceOffers": [
+        {
+          "store": "Amazon Brasil",
+          "url": "https://www.amazon.com.br/Monitor-Gamer-Samsung-HDMI-Preto/dp/B0F1C49115",
+          "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+        }
+      ],
+      "sizeInches": 24,
+      "panel": "IPS",
+      "resolution": "1920x1080"
+    }
+  ],
+  "retired_product_ids": [
+    "seed1"
+  ]
 }

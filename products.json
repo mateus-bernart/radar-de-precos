@@ -23,33 +23,31 @@
     "resolution": "1920x1080"
   },
   {
-    "id": "seed1",
-    "name": "Samsung Essential S3 24 S30GD",
-    "model": "S30GD",
-    "query": "Samsung S3 S30GD monitor IPS 24 100Hz",
+    "id": "samsung-s32gf-24-120hz",
+    "name": "Samsung Essential S3 S32GF 24″",
+    "model": "LS24F320GALMZD",
+    "query": "Samsung LS24F320GALMZD S32GF monitor 24 IPS 120Hz",
+    "match_models": [
+      "LS24F320GALMZD",
+      "S24F320GA"
+    ],
     "category": "Monitor",
-    "specs": "24″ · IPS · Full HD · 100 Hz",
+    "specs": "24″ · IPS · Full HD · 120 Hz",
     "target": 399,
     "brand": "Samsung",
-    "url": "https://www.samsung.com/br/monitors/full-hd-1080p/essential-monitor-s3-s30gd-24-inch-fhd-ips-100hz-ls24d300galmzd/",
-    "match_models": [
-      "LS24D300GALMZD",
-      "S24D300GA",
-      "S30GD"
-    ],
-    "size_required": true,
-    "refresh_hz": 100,
-    "image": "https://images.samsung.com/is/image/samsung/p6pim/br/ls24d300galmzd/gallery/br-essential-s3-s30gd-ls24d300galmzd-545264636?$624_468_PNG$",
+    "refresh_hz": 120,
+    "sizeInches": 24,
+    "panel": "IPS",
+    "resolution": "1920x1080",
+    "url": "https://www.samsung.com/br/monitors/full-hd-1080p/essential-monitor-s3-s32gf-24-inch-fhd-ips-120hz-ls24f320galmzd/",
+    "image": "https://m.media-amazon.com/images/I/71D5dACxAYL._AC_SX679_.jpg",
     "referenceOffers": [
       {
         "store": "Amazon Brasil",
-        "url": "https://www.amazon.com.br/Monitor-Gamer-Samsung-HDMI-Preto/dp/B0F1C49115",
-        "checkedAt": "2026-11-21T23:11:34.533990+00:00"
+        "url": "https://www.amazon.com.br/dp/B0FBRZ1ZPB",
+        "checkedAt": "2026-11-22T00:06:30.634255+00:00"
       }
-    ],
-    "sizeInches": 24,
-    "panel": "IPS",
-    "resolution": "1920x1080"
+    ]
   },
   {
     "id": "seed2",

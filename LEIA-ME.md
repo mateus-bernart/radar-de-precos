@@ -66,3 +66,7 @@ Cada produto apresenta status e motivo. Não há previsão de preço futuro nem 
 ## Editar intenção de compra
 
 No topo, "Editar perfil de compra" permite mudar orçamento, painel, frequência mínima e a combinação principal/alternativa de tamanho e resolução. A tolerância de tamanho é 0,5 polegada. Pode desativar a alternativa e escolher priorizar custo-benefício, principal ou alternativa. O perfil fica no navegador e entra no backup JSON; importar o backup leva as preferências para outro aparelho. Alterar o perfil recalcula imediatamente os produtos já cadastrados, sem alterar a coleta ou consumir API. O formulário atual se aplica a monitores; produtos de outras categorias precisam de critérios próprios.
+
+## Substituição do Samsung
+
+O S30GD de 100 Hz (seed1) foi retirado do catálogo e da coleta automática a pedido do usuário. O S32GF de 120 Hz (LS24F320GALMZD) tem ID próprio e começa seu histórico separado. Os registros do antigo permanecem arquivados em data/prices.json e no backup JSON, fora dos cards, análises e exportação CSV ativa. Produtos locais com o ID retirado não reaparecem no catálogo. O total monitorado continua em cinco produtos.
